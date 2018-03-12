@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --upgrade pip
 RUN pip install jupyter
 
+EXPOSE 8888
 ENV NB_USER jovyan
 ENV NB_UID 1000
 ENV HOME /home/${NB_USER}
@@ -25,3 +26,7 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 WORKDIR ${HOME}
+
+SHELL ["/bin/bash", "-c"]
+
+CMD ["./launch_jupyter.bash"]
