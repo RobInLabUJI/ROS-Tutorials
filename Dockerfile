@@ -27,6 +27,4 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 WORKDIR ${HOME}
 
-SHELL ["/bin/bash", "-c"]
-
-CMD ["./launch_jupyter.bash"]
+CMD ["jupyter","notebook","--ip=0.0.0.0","--no-browser"]
