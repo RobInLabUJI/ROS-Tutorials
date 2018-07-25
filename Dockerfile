@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/
 
 RUN pip install --upgrade pip
-RUN pip install jupyter, matplotlib
+RUN pip install jupyter matplotlib
 
 ENV NB_USER jovyan
 ENV NB_UID 1000
