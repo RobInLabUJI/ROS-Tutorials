@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y \
     ros-kinetic-common-tutorials=0.1.10-0xenial-20180516-183933-0800\
     python-pip \
     xvfb=2:1.18.4-0ubuntu0.7 \
-	x11-apps \
+	x11-apps=7.7+5+nmu1ubuntu1 \
+	netpbm=2:10.0-15.3\
     && rm -rf /var/lib/apt/lists/
 
 RUN pip install --upgrade pip
@@ -14,8 +15,7 @@ RUN pip install \
   notebook==5.6.0 \
   ipywidgets==7.3.0 \
   ipykernel==4.8.2 \
-  matplotlib==2.2.2 \
-  scipy
+  matplotlib==2.2.2
 
 ENV NB_USER jovyan
 ENV NB_UID 1000
