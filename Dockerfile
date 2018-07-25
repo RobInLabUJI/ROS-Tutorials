@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     ros-kinetic-common-tutorials=0.1.10-0xenial-20180516-183933-0800\
     python-pip \
     xvfb=2:1.18.4-0ubuntu0.7 \
+	x11-apps \
     && rm -rf /var/lib/apt/lists/
 
 RUN pip install --upgrade pip
