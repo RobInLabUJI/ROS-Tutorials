@@ -2,14 +2,18 @@ FROM ros:kinetic-ros-base
 
 # install ros tutorials packages
 RUN apt-get update && apt-get install -y \
-    ros-kinetic-ros-tutorials \
-    ros-kinetic-common-tutorials \
-    python-pip \
-    xvfb \
+    ros-kinetic-ros-tutorials=0.7.1 \
+    ros-kinetic-common-tutorials=0.1.10 \
+    python-pip=8.1.1 \
+    xvfb=2:1.18.4 \
     && rm -rf /var/lib/apt/lists/
 
 RUN pip install --upgrade pip
-RUN pip install jupyter matplotlib
+RUN pip install \
+  notebook==5.6.0 \
+  ipywidgets==7.3.0 \
+  ipykernel==4.8.2 \
+  matplotlib=2.2.2
 
 ENV NB_USER jovyan
 ENV NB_UID 1000
