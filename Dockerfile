@@ -13,7 +13,8 @@ RUN pip install \
   notebook==5.6.0 \
   ipywidgets==7.3.0 \
   ipykernel==4.8.2 \
-  matplotlib==2.2.2
+  matplotlib==2.2.2 \
+  scipy
 
 ENV NB_USER jovyan
 ENV NB_UID 1000
