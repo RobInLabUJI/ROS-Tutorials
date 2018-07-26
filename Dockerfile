@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 	netpbm=2:10.0-15.3\
     && rm -rf /var/lib/apt/lists/
 
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip==18.0
 RUN pip install \
   notebook==5.6.0 \
   ipywidgets==7.3.0 \
@@ -33,3 +33,5 @@ RUN chown -R ${NB_UID} ${HOME}
 
 USER ${NB_USER}
 WORKDIR ${HOME}
+
+CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]

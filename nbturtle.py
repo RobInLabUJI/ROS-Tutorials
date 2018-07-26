@@ -13,7 +13,7 @@ def callback(msg):
     if not prev_time or \
         current_time - prev_time > 0.2:
             prev_time = current_time
-            os.system('xwd -display :99 -name TurtleSim | xwdtopnm | pnmtopng > frame.png')
+            os.system('xwd -display :99 -name TurtleSim | xwdtopnm 2> /dev/null | pnmtopng > frame.png ')
             frame = plt.imread('frame.png')
             fig = plt.figure(num=1,figsize=(10,10),clear=True)
             plt.imshow(frame);
