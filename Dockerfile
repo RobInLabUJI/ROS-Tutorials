@@ -34,4 +34,4 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 WORKDIR ${HOME}
 
-CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
+CMD ["jupyter", "notebook", "--no-browser", "--ip", "0.0.0.0"]
