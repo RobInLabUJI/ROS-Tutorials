@@ -58,6 +58,9 @@ RUN rm -fr ${HOME}/.local/share
 COPY . ${HOME}
 RUN chown -R ${NB_UID} ${HOME}
 
+RUN pip3 install bash_kernel
+RUN python3 -m bash_kernel.install
+
 USER ${NB_USER}
 WORKDIR ${HOME}
 
