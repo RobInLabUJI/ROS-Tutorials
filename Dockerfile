@@ -15,7 +15,8 @@ RUN pip install \
   notebook==5.6.0 \
   ipywidgets==7.3.0 \
   ipykernel==4.8.2 \
-  matplotlib==2.2.2
+  matplotlib==2.2.2 \
+  jupyterlab==0.33.4
 
 ENV NB_USER jovyan
 ENV NB_UID 1000
@@ -34,4 +35,4 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 WORKDIR ${HOME}
 
-CMD ["jupyter", "notebook", "--no-browser", "--ip", "0.0.0.0"]
+CMD ["jupyter", "lab", "--no-browser", "--ip", "0.0.0.0"]
