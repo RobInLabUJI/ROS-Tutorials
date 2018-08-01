@@ -31,6 +31,14 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 
+RUN apt-get update && apt-get install -y \
+	ros-kinetic-stage-ros \
+	&& rm -rf /var/lib/apt/lists/
+
+RUN apt-get update && apt-get install -y \
+	xserver-xorg-video-dummy \
+	&& rm -rf /var/lib/apt/lists/
+
 USER ${NB_USER}
 WORKDIR ${HOME}
 
