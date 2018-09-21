@@ -2,8 +2,8 @@ FROM ros:kinetic-ros-base
 
 # install ros tutorials packages
 RUN apt-get update && apt-get install -y \
-    ros-kinetic-ros-tutorials=0.7.1-0xenial-20180516-160001-0800 \
-    ros-kinetic-common-tutorials=0.1.10-0xenial-20180516-183933-0800\
+    ros-kinetic-ros-tutorials \
+    ros-kinetic-common-tutorials \
     python-pip \
     xvfb=2:1.18.4-0ubuntu0.7 \
 	x11-apps=7.7+5+nmu1ubuntu1 \
